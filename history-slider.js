@@ -12,12 +12,12 @@ const historySwiper = new Swiper('.swiper.is-history', {
     breakpoints: {
         // when window width is >= 768px
         768: {
-            slidesPerView: 3.5,
+            slidesPerView: 2.5,
             spaceBetween: 24
         },
         // when window width is >= 1280px
         1280: {
-            slidesPerView: 4.5,
+            slidesPerView: 3.5,
             spaceBetween: 32
         }
     }
