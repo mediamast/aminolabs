@@ -21,8 +21,8 @@ $dragElement.on('mouseup', function () {
     $(this).css('transform', 'scale(1)');
 });
 
-// CMS Products Swiper
-const cmsProductsSwiper = new Swiper('.swiper.is-cms-products', {
+// CMS Culture Swiper
+const cultureSwiper = new Swiper('.swiper.is-culture', {
     slidesPerView: 1.5,
     spaceBetween: 16,
 
