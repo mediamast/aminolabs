@@ -1,4 +1,4 @@
-const cmsReviewsSwiper = new Swiper('.swiper.is-numbers', {
+const numbersSwiper = new Swiper('.swiper.is-numbers', {
     slidesPerView: 1,
     spaceBetween: 16,
   
