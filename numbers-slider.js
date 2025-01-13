@@ -1,14 +1,6 @@
-const cmsReviewsSwiper = new Swiper('.swiper.is-cms-reviews', {
+const cmsReviewsSwiper = new Swiper('.swiper.is-numbers', {
     slidesPerView: 1,
     spaceBetween: 16,
-
-    pagination: {
-      el: ".bullet-pagination-slider",
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '"></span>';
-      }
-    },
   
     breakpoints: {
       // when window width is >= 768px
