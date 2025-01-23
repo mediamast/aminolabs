@@ -15,6 +15,9 @@ $(document).ready(function () {
 
         if (!$next.length) return; // Exit if the step doesn't exist
 
+        // Scroll to the top of the window
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
         // Animate transition between steps
         gsap.to($current, {
             opacity: 0,
