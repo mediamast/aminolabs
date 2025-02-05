@@ -30,6 +30,11 @@ $(document).ready(function () {
                 currentStep = stepIndex; // Update the current step
             },
         });
+
+        // Check if we're moving from step 5 to step 6 and render the image
+        if (stepIndex === 6 && currentStep === 5) {
+            renderImage();
+        }
     }
 
     // Enable or disable the "Next" button based on input selections
@@ -61,7 +66,7 @@ $(document).ready(function () {
 
     // Update product options based on selected market
     $('input[name="market"]').on('change', function () {
-        const isPlantBased = $(this).val() === 'Plant-Based Nutrition';
+        const isPlantBased = $(this).data('name') === 'plantbased-nutrition';
         const $options = $('input[name="product-type"]').closest('.configurator-selection');
 
         $options.each(function () {
@@ -84,4 +89,33 @@ $(document).ready(function () {
             $(this).closest('.configurator-selection').toggleClass('is-disabled', !isAllowed).removeClass('is-selected');
         });
     });
+
+    function renderImage() {
+        // Retrieve selected values based on data-name attribute
+        const market = $('input[name="market"]:checked').data('name');
+        const productType = $('input[name="product-type"]:checked').data('name');
+        const packaging = $('input[name="packaging"]:checked').data('name');
+    
+        if (!market || !productType || !packaging) return; // Exit if any value is missing
+    
+        // Construct the class name
+        const targetClass = `.pc-${productType}-${packaging}-${market}`;
+    
+        // Hide all direct child elements (all classes) inside .pc-final-render_wrapper
+        $('.pc-final-render_wrapper > *').hide();
+
+        // Apply CSS styles to all children
+        $('.pc-final-render_wrapper > *').css({
+            'object-fit': 'contain',
+            'transform': 'scale(1.25)'
+        });
+
+        console.log(targetClass);
+    
+        // Show the matching image
+        const targetImage = $(`.pc-final-render_wrapper ${targetClass}`);
+        if (targetImage.length) {
+            targetImage.css('display', 'block');
+        }
+    }
 });

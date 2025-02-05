@@ -1,6 +1,10 @@
 const numbersSwiper = new Swiper('.swiper.is-numbers', {
     slidesPerView: 1,
     spaceBetween: 16,
+
+    direction: 'horizontal',
+    speed: 500,
+    loop: true,
   
     breakpoints: {
       // when window width is >= 768px
