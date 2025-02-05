@@ -21,12 +21,12 @@ $(document).ready(function () {
         // Animate transition between steps
         gsap.to($current, {
             opacity: 0,
-            x: -32,
+            y: -32,
             duration: 0.35,
             onComplete: function () {
                 $current.hide();
                 $next.css('display', 'grid');
-                gsap.fromTo($next, { opacity: 0, x: 32 }, { opacity: 1, x: 0, duration: 0.35 });
+                gsap.fromTo($next, { opacity: 0, y: 32 }, { opacity: 1, y: 0, duration: 0.35 });
                 currentStep = stepIndex; // Update the current step
             },
         });
