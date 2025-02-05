@@ -66,7 +66,7 @@ $(document).ready(function () {
 
     // Update product options based on selected market
     $('input[name="market"]').on('change', function () {
-        const isPlantBased = $(this).data('name') === 'plantbased-nutrition';
+        const isPlantBased = $(this).data('reference') === 'plantbased-nutrition';
         const $options = $('input[name="product-type"]').closest('.configurator-selection');
 
         $options.each(function () {
@@ -91,10 +91,10 @@ $(document).ready(function () {
     });
 
     function renderImage() {
-        // Retrieve selected values based on data-name attribute
-        const market = $('input[name="market"]:checked').data('name');
-        const productType = $('input[name="product-type"]:checked').data('name');
-        const packaging = $('input[name="packaging"]:checked').data('name');
+        // Retrieve selected values based on data-reference attribute
+        const market = $('input[name="market"]:checked').data('reference');
+        const productType = $('input[name="product-type"]:checked').data('reference');
+        const packaging = $('input[name="packaging"]:checked').data('reference');
     
         if (!market || !productType || !packaging) return; // Exit if any value is missing
     
